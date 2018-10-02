@@ -5,6 +5,7 @@ return [
         'Magento_Directory' => 1,
         'Magento_Eav' => 1,
         'Chapagain_HelloWorld' => 1,
+        'Cloudways_Newmodule' => 1,
         'Magento_Theme' => 1,
         'Magento_Cms' => 1,
         'Magento_Customer' => 1,
@@ -127,7 +128,6 @@ return [
         'Magento_WishlistAnalytics' => 1,
         'Mageplaza_Core' => 1,
         'Mageplaza_Smtp' => 1,
-        'Pulsestorm_HelloWorldMVVM' => 1,
         'Temando_Shipping' => 1,
         'Toptal_Blog' => 1,
         'Vertex_Tax' => 1
