@@ -2,7 +2,8 @@
 ?>
 <span style="font-weight: 400;">This is custom front view.</span>
 <!-- alternative this with form and look at interaction -->
-<form class="form"  method="post"><!-- action="result" -->
+<form class="form"  method="post" action="../index/result">
+	<!-- action="<?php // $this->getUrl('newmodule/index/tst') ?>"> -->
 
     <fieldset class="fieldset">
         <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Test Form') ?></span></legend><br>
