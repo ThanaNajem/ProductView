@@ -1,0 +1,35 @@
+<?php
+?>
+<span style="font-weight: 400;">This is custom front view - editting page.</span>
+<!-- alternative this with form and look at interaction -->
+<form class="form"  method="post" action="<?php echo $this->getUrl('newmodule/index/editresult'); ?>">
+	<!-- action="<?php // $this->getUrl('newmodule/index/tst') ?>"> -->
+
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Test Form') ?></span></legend><br>
+        <div class="field required">
+            <label for="editnumber" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Input') ?></span>
+            </label>
+
+            <div class="control">
+                <input type="text" id="editnumber"
+                       name="editnumber"
+                       class="input-text" value="<?php echo $block->getId()  ; ?>">
+            </div> <div class="control">
+                <input type="hidden"  id="id"
+                       name="id"
+                         value="<?php echo "44"  ; ?>">
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Edit') ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Edit') ?></span>
+            </button>
+        </div>
+    </div>
+
+</form>

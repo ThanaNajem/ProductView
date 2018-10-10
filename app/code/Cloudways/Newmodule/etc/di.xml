@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--     <preference for="\Magento\Catalog\Model\Product" type="Cloudways\NewModule\Model\Rewrite\Catalog\Product" />
+    <preference for="Magento\Catalog\Controller\Product\View" type="Cloudways\NewModule\Controller\Rewrite\Product\View" />
+    <preference for="Magento\Contact\Block\ContactForm" type="Cloudways\Newmodule\Block\ContactForm" /> -->
+</config>

@@ -2,12 +2,11 @@
 
 namespace Cloudways\Newmodule\Controller\Index;
 
-
+use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\View\Element\Messages;
-use Magento\Framework\View\Result\PageFactory;
-
+use Magento\Framework\View\Result\PageFactory; 
 class Result extends \Magento\Framework\App\Action\Action
 {
     /** @var PageFactory $resultPageFactory */
@@ -31,28 +30,46 @@ class Result extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
+
         $number = $this->getRequest()->getParam('number');
 
-        $resultPage = $this->resultPageFactory->create();
+        $resultPage = $this->resultPageFactory->create(); 
+ 
+        $crudObj = $this->_objectManager->create('Cloudways\Newmodule\Model\Crud');
 
-        /** @var Messages $messageBlock */
-        $messageBlock = $resultPage->getLayout()->createBlock(
-            'Magento\Framework\View\Element\Messages',
-            'answer'
-        );
-        if (is_numeric($number)) {
-            $messageBlock->addSuccess($number . ' times 2 is ' . ($number * 2));
-        }else{
-            $messageBlock->addError('You didn\'t enter a number!');
+        // get collection 
+
+        // $coll = $crudObj->getCollection(); 
+        $status="";
+       // save into table
+        $crudObj->setData('number',$number);
+       
+
+         if ($crudObj->save()) 
+        {
+
+            $status ="success";   
+
         }
+        
+        
+        else
+        {
+            
+            $status ="fail";   
 
-        $resultPage->getLayout()->setChild(
-            'content',
-            $messageBlock->getNameInLayout(),
-            'answer_alias'
-        );
-
-        return $resultPage;
+        }
+        $id =  $crudObj->getData('id');
+        // print_r($status);
+        
+       // $this->_view->renderLayout();
+       
+        //../newmodule/index/edit
+        // $resultRedirect = $this->resultRedirectFactory->create(); 
+        // $resultRedirect->setPath('newmodule/index/edit',['id' => $number]);  
+        // return $resultRedirect;  
+       return $this->_redirect('newmodule/index/edit',['id' => $id]);
+       // return $resultPage;
     }
 }
   
